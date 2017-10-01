@@ -46,7 +46,7 @@ public class Main {
     grades.add(2.7);
     grades.add(3.0);
 
-    System.out.println("Aveage grades: ");
+    System.out.println("Average grades: ");
     System.out.println(t1.calculateAverage(grades));
 
     System.out.println("Grade for CPSC-210: ");

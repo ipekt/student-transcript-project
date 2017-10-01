@@ -7,7 +7,7 @@ Data abstraction steps to follow:
 * Specifying: think about the behaviour of the class
 * Using: think about the behaviour the class will perform 
 * Testing: think about test cases based on specs
-* Implementing
+* Implementing: add fields to class and then implement it based tests and use cases
 
 Display student transcripts in following representations
 

@@ -2,6 +2,8 @@ package tests;
 
 import static junit.framework.TestCase.assertEquals;
 
+import java.util.ArrayList;
+import java.util.List;
 import model.Transcript;
 import org.junit.Before;
 import org.junit.Test;
@@ -73,5 +75,31 @@ public class TranscriptTest {
     testTranscript.addGrade("CPSC-110", 3.1);
     double gpa = (3.5 + 4.0 + 3.1) / 3;
     assertEquals(testTranscript.getGPA(), gpa);
+  }
+
+  @Test
+  public void testCalculateAverage() {
+    List<Double> grades = new ArrayList<>();
+    grades.add(1.0);
+    grades.add(2.7);
+    grades.add(3.0);
+    assertEquals(testTranscript.calculateAverage(grades), (1.0 + 2.7 + 3.0) / 3);
+  }
+
+  @Test
+  public void testGetGradeByCourse() {
+    testTranscript.addGrade("CPSC-210", 3.8);
+    assertEquals(testTranscript.getCourseAndGrade("CPSC-210"), "CPSC-210: 3.8");
+    assertEquals(testTranscript.getGradeByCourse("CPSC-210"), 3.8);
+  }
+
+  @Test
+  public void testGetAverageOverSelectedCourses() {
+    List<String> courses = new ArrayList<>();
+    courses.add("CPSC-210");
+    courses.add("ECON-115");
+    testTranscript.addGrade(courses.get(1), 2.5);
+    testTranscript.addGrade(courses.get(2), 3.5);
+    assertEquals(testTranscript.getAverageOverSelectedCourses(courses), (2.5 + 3.5) / 2 );
   }
 }
