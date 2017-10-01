@@ -95,4 +95,19 @@ public class Transcript {
 
     return sum / grades.size();
   }
+
+  // EFFECTS: calculates average of selected grades
+  public double calculateAverage(List<Double> selectedGrades) {
+    return 0.0;
+  }
+
+  // EFFECTS: returns the grade for the given course parameter
+  public double getGradeByCourse(String course) {
+    return 0.0;
+  }
+
+  // EFFECTS: returns average grade of selected courses
+  public double getAverageOverSelectedCourses(List<String> selectedCourses){
+    return 0.0;
+  }
 }
