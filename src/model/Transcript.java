@@ -83,7 +83,7 @@ public class Transcript {
       }
     }
 
-    System.out.print(transcript);
+    System.out.println(transcript);
   }
 
   // EFFECTS: Returns GPA
