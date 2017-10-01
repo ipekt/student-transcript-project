@@ -33,7 +33,7 @@ public class Transcript {
   public void addGrade(String course, double grade) {
   }
 
-  // REQUIRES: course not null and course in the list
+  // REQUIRES: course not null
   // EFFECTS: Return course name and grade in format CourseName - Grade
   public String getCourseAndGrade(String course) {
     return "ARTS-101: 3.0";
