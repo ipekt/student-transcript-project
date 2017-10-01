@@ -1,6 +1,16 @@
 package model;
 
+import java.util.List;
+
+/**
+ * INVARIANT: course list and grade list are the same size
+ * each course has a grade associated, and vice versa, at matching indices
+ */
 public class Transcript {
+  private String studentName;
+  private int studentId;
+  private List<String> courses;
+  private List<Double> grades;
 
   public Transcript(String studentName, int studentId) {
 
