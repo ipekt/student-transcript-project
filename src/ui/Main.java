@@ -38,6 +38,5 @@ public class Main {
     t3.printTranscript();
     System.out.print(t3.getCourseAndGrade("CPSC-210"));
     System.out.println(t3.getGPA());
-    System.out.print(t3.getStudentName() + ": ");
   }
 }

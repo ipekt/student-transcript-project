@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -13,50 +14,85 @@ public class Transcript {
   private List<Double> grades;
 
   public Transcript(String studentName, int studentId) {
-
+    this.studentName = studentName;
+    this.studentId = studentId;
+    courses = new ArrayList<>();
+    grades = new ArrayList<>();
   }
 
   // getters
   public String getStudentName() {
-    return "Jane";
+    return this.studentName;
   }
 
   // getters
   public int getStudentId() {
-    return 1000;
+    return this.studentId;
   }
 
   // setters
-  public String setStudentName() {
-    return "Jane";
+  public String setStudentName(String studentName) {
+    this.studentName = studentName;
+    return this.studentName;
   }
 
   // setters
-  public int setStudentId() {
-    return 1000;
+  public int setStudentId(int studentId) {
+    this.studentId = studentId;
+    return this.studentId;
   }
-
 
   // REQUIRES: grade in [0.0, 4.0] and course not null
   // MODIFIES: this
   // EFFECTS: Adds grade and course to a list
   public void addGrade(String course, double grade) {
+    if (courses.contains(course)) {
+      int courseIndex = courses.indexOf(course);
+      grades.set(courseIndex, grade);
+    } else {
+      this.courses.add(course);
+      this.grades.add(grade);
+    }
   }
 
   // REQUIRES: course not null
-  // EFFECTS: Return course name and grade in format CourseName - Grade
+  // EFFECTS: Return course name and grade in format CourseName: Grade
   public String getCourseAndGrade(String course) {
-    return "ARTS-101: 3.0";
+    if (courses.contains(course)) {
+      int courseIndex = courses.indexOf(course);
+      return courses.get(courseIndex) + ": " + grades.get(courseIndex);
+    } else {
+      return null;
+    }
   }
 
   // EFFECTS: Displays course names with grades earned
   // in format StudentName, StudentId: CourseName: Grade, CourseName: Grade
   public void printTranscript() {
-    System.out.print("Jane, 7830: ARTS-101: 3.0, ENGL-201: 2.0");
+    StringBuilder transcript = new StringBuilder(studentName + ", " + studentId + ": ");
+    int courseSize = courses.size();
+
+    for (int i = 0; i < courseSize; i++) {
+      transcript
+          .append(courses.get(i))
+          .append( ": ")
+          .append(grades.get(i));
+
+      if (i != courseSize - 1 ) {
+        transcript.append(", ");
+      }
+    }
+
+    System.out.print(transcript);
   }
 
   // EFFECTS: Returns GPA
   public double getGPA() {
-    return 0.0;
+    double sum = 0;
+    for(double i : grades) {
+      sum += i;
+    }
+
+    return sum / grades.size();
   }
 }
