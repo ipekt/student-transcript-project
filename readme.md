@@ -12,8 +12,8 @@ Data abstraction steps to follow:
 Display student transcripts in following representations
 
 
-![Transcript example][/transcript1.PNG]
+![Transcript example][transcript1.PNG]
 
 
-![Transcript example2][/Transcript2.PNG]
+![Transcript example2][Transcript2.PNG]
 
