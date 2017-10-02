@@ -1,6 +1,6 @@
 # Student Transcript Project
 
-[Systematic Program Design - Software Abstraction](https://courses.edx.org/courses/course-v1:UBCx+SoftConst1x+3T2017/course/)course exercise
+[Systematic Program Design - Software Abstraction](https://courses.edx.org/courses/course-v1:UBCx+SoftConst1x+3T2017/course/) course exercise
 
 Data abstraction steps to follow:
 
@@ -12,8 +12,8 @@ Data abstraction steps to follow:
 Display student transcripts in following representations
 
 
-![Transcript example][transcript1.PNG]
+![Alt text][/transcript1.PNG "Transcript example 1"]
 
 
-![Transcript example2][Transcript2.PNG]
+![Alt text][/Transcript2.PNG "Transcript example 2"]
 
