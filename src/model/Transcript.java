@@ -88,26 +88,34 @@ public class Transcript {
 
   // EFFECTS: Returns GPA
   public double getGPA() {
-    double sum = 0;
-    for(double i : grades) {
-      sum += i;
-    }
-
-    return sum / grades.size();
+    return calculateAverage(grades);
   }
 
+  // REQUIRES: selectedGrades are in grades list
   // EFFECTS: calculates average of selected grades
   public double calculateAverage(List<Double> selectedGrades) {
-    return 0.0;
+    double sum = 0.0;
+    for (double grade : selectedGrades) {
+      sum += grade;
+    }
+    return sum / selectedGrades.size();
   }
 
+  // REQUIRES: course not null
   // EFFECTS: returns the grade for the given course parameter
   public double getGradeByCourse(String course) {
-    return 0.0;
+    int index = courses.indexOf(course);
+    return grades.get(index);
   }
 
+  // REQUIRES: selectedCourse are in courses list
   // EFFECTS: returns average grade of selected courses
   public double getAverageOverSelectedCourses(List<String> selectedCourses){
-    return 0.0;
+    List<Double> selectedCourseGrades = new ArrayList<>();
+
+    for (String course : selectedCourses) {
+      selectedCourseGrades.add(getGradeByCourse(course));
+    }
+    return calculateAverage(selectedCourseGrades);
   }
 }

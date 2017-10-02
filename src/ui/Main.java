@@ -54,7 +54,7 @@ public class Main {
 
     List<String> courses = new ArrayList<>();
     courses.add("CPSC-210");
-    courses.add("ECON-115");
+    courses.add("ENGL-201");
 
     System.out.println("Average grades for CPSC-210 and ENGL-201: ");
     System.out.println(t1.getAverageOverSelectedCourses(courses));

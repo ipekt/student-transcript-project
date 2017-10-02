@@ -98,8 +98,8 @@ public class TranscriptTest {
     List<String> courses = new ArrayList<>();
     courses.add("CPSC-210");
     courses.add("ECON-115");
-    testTranscript.addGrade(courses.get(1), 2.5);
-    testTranscript.addGrade(courses.get(2), 3.5);
+    testTranscript.addGrade(courses.get(0), 2.5);
+    testTranscript.addGrade(courses.get(1), 3.5);
     assertEquals(testTranscript.getAverageOverSelectedCourses(courses), (2.5 + 3.5) / 2 );
   }
 }
